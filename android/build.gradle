@@ -1,12 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion "33.0.0"
+    namespace "com.innfactory.dialogflow"  // ← AGREGAR ESTA LÍNEA
+    
+    compileSdkVersion 34  // ← ACTUALIZAR de 33 a 34
+    buildToolsVersion "34.0.0"  // ← ACTUALIZAR de 33 a 34
     
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34  // ← ACTUALIZAR de 33 a 34
         versionCode 1
         versionName "1.0"
         
@@ -53,9 +55,9 @@ repositories {
 dependencies {
     implementation "com.facebook.react:react-native:+"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'  // ← ACTUALIZAR de 1.4.1
     implementation 'ai.api:sdk:2.0.7@aar'
-    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.google.code.gson:gson:2.8.9'  // ← ACTUALIZAR de 2.8.8
     implementation 'commons-io:commons-io:2.11.0'
     implementation('ai.api:libai:1.4.8') {
         exclude module: 'log4j-core'
