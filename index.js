@@ -1,6 +1,6 @@
 'use strict';
 
-import { NativeAppEventEmitter } from 'react-native';
+import { DeviceEventEmitter } from 'react-native';
 import { Dialogflow } from './js/Dialogflow';
 import { Dialogflow_V2 } from './js/Dialogflow_V2';
 import Voice from './js/RCTVoice';
@@ -21,7 +21,7 @@ dialogflow.setConfiguration = function (accessToken, languageTag) {
 
 dialogflow.startListening = function (onResult, onError) {
 
-    dialogflow.subscription = NativeAppEventEmitter.addListener(
+    dialogflow.subscription = DeviceEventEmitter.addListener(
         'onSpeechResults',
         (result) => {
             if (result.value) {
